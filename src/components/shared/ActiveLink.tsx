@@ -1,4 +1,5 @@
-import { Link, useHref } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import classNames from "./classNames";
 
 interface ActiveLinkProps {
@@ -14,10 +15,10 @@ const ActiveLink: React.FC<ActiveLinkProps> = ({
   activeClassName,
   isRoot = false,
 }) => {
-  const pathName: string = useHref();
+  const { pathname }: { pathname: string } = useLocation();
   const active: boolean = isRoot
-    ? pathName === href
-    : pathName.startsWith(href);
+    ? pathname === href
+    : pathname.startsWith(href);
   const classes: string = classNames(active && activeClassName);
 
   return (

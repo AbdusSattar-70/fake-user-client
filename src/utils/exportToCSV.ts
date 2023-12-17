@@ -1,3 +1,5 @@
+import { FakeUsers } from "../../types";
+
 export const exportToCSV = (userData: FakeUsers[]) => {
   const csvData =
     "Index,Identifier,FirstName,MiddleName,LastName,City,Street,Country,PhoneNumber\n" +
@@ -8,7 +10,7 @@ export const exportToCSV = (userData: FakeUsers[]) => {
             user.middleName
           }","${user.lastName}","${user.city}","${user.street}","${
             user.country
-          }","${user.phone}"`,
+          }","${user.phone}"`
       )
       .join("\n");
 

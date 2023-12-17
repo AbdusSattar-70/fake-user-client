@@ -57,8 +57,24 @@ const LoadUserByPage = () => {
 
   const submitSeedInput = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { seed } = e.target;
-    setSeed(parseInt(seed.value, 10));
+    const seedInput = e.currentTarget.elements.namedItem(
+      "seed"
+    ) as HTMLInputElement | null;
+
+    if (seedInput) {
+      setSeed(parseInt(seedInput.value, 10));
+    }
+  };
+
+  const submitErrInput = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const errorRateInput = e.currentTarget.elements.namedItem(
+      "errorRate"
+    ) as HTMLInputElement | null;
+
+    if (errorRateInput) {
+      setErrorRate(parseInt(errorRateInput.value, 10));
+    }
   };
 
   const handleRegionChange = (selectedRegion: string) => {
@@ -67,12 +83,6 @@ const LoadUserByPage = () => {
 
   const handleErrSlider = (value: number) => {
     setErrorRate(value);
-  };
-
-  const submitErrInput = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const { errorRate } = e.target;
-    setErrorRate(parseInt(errorRate.value, 10));
   };
 
   return (

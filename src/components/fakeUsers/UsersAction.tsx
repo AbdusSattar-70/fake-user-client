@@ -30,7 +30,7 @@ const UsersAction: React.FC<UsersActionProps> = ({
     <>
       <section className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-col-1 gap-4">
         {/* Error rate input field */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-6">
           <form onSubmit={submitErrInput} className="flex flex-col gap-2">
             <label htmlFor="errorRate" className="text-xl text-purple-800">
               Error:
