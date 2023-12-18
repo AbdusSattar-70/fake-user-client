@@ -38,6 +38,7 @@ const UsersAction: React.FC<UsersActionProps> = ({
             <input
               id="errorRate"
               type="number"
+              step="0.01"
               name="errorRate"
               autoComplete="false"
               placeholder="Enter error rate"
@@ -60,10 +61,11 @@ const UsersAction: React.FC<UsersActionProps> = ({
               autoComplete="false"
               id="errorRate"
               className="range range-accent w-full"
+              value={errorRate}
               min={0}
               max={1000}
-              value={errorRate}
-              onChange={(e) => handleErrSlider(parseInt(e.target.value, 10))}
+              step={0.5}
+              onChange={(e) => handleErrSlider(parseFloat(e.target.value))}
             />
           </div>
         </div>

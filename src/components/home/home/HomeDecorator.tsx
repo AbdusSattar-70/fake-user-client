@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bgImg from "../../../assets/bg.jpg";
 
 const HomeDecorator = () => {
@@ -21,7 +22,9 @@ const HomeDecorator = () => {
               Your Gateway to Consistent Test Scenarios. Same seed, same data,
               and tailored errors for robust testing.
             </p>
-            <button className="btn btn-primary mt-4">Get Started</button>
+            <Link to={"/users"} className="btn btn-primary mt-4">
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
